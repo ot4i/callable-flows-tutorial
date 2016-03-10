@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<MessagePool xmlns="http://wwww.ibm.com/iib/test/1.0.0">
-    <InputMessage timestamp="1457361134919" nodeId="FCMComposite_1_1" name="Example JSON input message" id="1457361134919-113">
-        <plainText>%7B%22tag%22%3A%22value%22%7D</plainText>
-    </InputMessage>
-</MessagePool>

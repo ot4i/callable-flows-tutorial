@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+ 
+	
+<!-- header::Start -->
+	<head>
+		<!-- Use Internet Explorer 9 Standards mode for Eclipse Browser Control - https://www.eclipse.org/swt/faq.php#browsernativeie and https://msdn.microsoft.com/en-us/library/jj676915%28v=vs.85%29.aspx -->
+  		<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+		
+		<!-- Next 2 http=equiv headers required to disable caching the Eclipse Browser Widget -->
+		<meta http-equiv="Pragma" content="no-cache">
+  		<meta http-equiv="Expires" content="-1">
+
+		<meta charset="UTF-8"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<meta name="copyright" content="Copyright IBM Corporation 2014" />
+		<meta name="abstract" content="IBM Integration Bus V10 Tutorial">
+		<meta name="author" content="IBM">
+		<meta name="description" content="IBM Integration Bus V10 Tutorial">
+		<meta name="keywords" content="keywords" > 
+		<meta name="robots" content="index,follow">
+		<meta name="source" content="IBM Integration Bus V10 Tutorial" /> 
+		
+		<title>IBM Integration Bus V10 Tutorial</title>
+
+    	<link rel="stylesheet" href="http://ot4i.github.io/iib-tutorials/css/main.css" />
+		<link rel="stylesheet" href="http://ot4i.github.io/iib-tutorials/css/app.css" />
+    	
+		<script src="http://ot4i.github.io/iib-tutorials/js/json2.js"></script>
+		<script src="http://ot4i.github.io/iib-tutorials/js/js2java.js"></script>
+		<script src="http://ot4i.github.io/iib-tutorials/js/js2java_steps.js"></script>
+		<script src="http://ot4i.github.io/iib-tutorials/js/vendor/modernizr.js"></script>
+	</head>
+<!-- header::End -->
+<!-- body::Start -->
+		<body>
+  	<!-- body content here -->
+	<div class="row">
+	  <div class="small-12 medium-12 large-12 columns">
+	    <p> </p>
+	  </div>
+	</div>
+	<div class="row">
+	  <div class="small-9 medium-9 large-9 columns">
+	    <h4 class="title">Callable Flows <action><button class="small radius button" tabindex="0" id="stepsViewDetails" onclick="viewDetails()"> View Details</button> </action></h4>
+	  </div>
+	  <div class="small-3 medium-3 large-3 columns">
+		<a href="javascript:;" onclick="openHelpSystem('/com.ibm.etools.msgbroker.helphome.doc/help_home_msgbroker.htm')" class="small right helplink">IBM Knowledge Center</a> 
+	  </div>
+	</div> 
+	<hr>
+	<div class="row">
+		<div class="small-10 medium-10 large-10 columns">
+		<h5> Learn how to use the CallableFlowInvoke, CallableFlowInput and CallableFlowReply nodes to divide processing between message flows. </h5>
+		</div>
+		<div class="small-2 medium-2 large-2 columns">
+			<button class="small radius button right" tabindex="0" id="backToGallery" onclick="backToGallery()"> Back To Gallery
+			</button>
+		</div>
+	</div>
+	<div class="row">          
+		  <div class="small-12 medium-12 large-12 columns">
+			<ul class="tabs vertical"> 
+				<li class="tab-title tab-title-small active">
+				  <a href="javascript:;" onclick="show('panel21')">Create</a> 
+				</li>
+				<li class="tab-title tab-title-small">
+				  <a href="javascript:;" onclick="show('panel31')">Prepare</a> 
+				</li>
+				<li class="tab-title tab-title-small">
+				  <a href="javascript:;" onclick="show('panel41')">Run</a> 
+				</li>
+			</ul>
+			<!-- editing -->
+			<div class="tabs-content panel-thin-blue vertical"> 
+		    	<div class="content active" id="panel21">
+		    		
+		    		<div class="small-10 medium-10 large-10 columns divider">
+					
+				      	<div class="row content-details">
+					      	<h4>Import projects</h4>
+					        
+						    
+								<p> When you click Import, four Applications will be created in your workspace: <span class="application">HTTPParentApplication</span>, <span class="application">TestCallableFlows</span>, <span class="application">CallableTimestamp</span> and <span class="application">CallableTimestampAlternate</span>. </p>
+								
+							
+								<p> <span class="application">CallableTimestamp</span> and <span class="application">CallableTimestampAlternate</span> are two separate Applications which implement a single message flow with a CallableFlowInput and CallableFlowReply node. Both applications are configured with the same Endpoint Name. In this tutorial, these two applications will run in the same integration server as the other flows, but with additional configuration they can run on different servers or even on different machines. </p>
+								
+							
+								<p> <span class="application">TestCallableFlows</span> contains a simple HTTP message flow which was used to unit test the two Callable flows when they were being developed. It calls both of them in turn and writes both of their responses into an output JSON message. </p>
+								
+							
+								<p> <span class="application">HTTPParentApplication</span> has a single flow called <span class="msgflow">TimestampMyJSON</span>. This exposes a raw HTTP service and uses a CallableFlowInvoke node to call one of the possible Timestamp flows. It writes this into the reply. It also allows a value in the input JSON to be specified which allows you to dynamically invoke a callable flow from a different Application name, overriding the default value specified on the CallableFlowInvoke node. </p>
+								
+							
+								<p> These are explained in more detail when you move on to the Prepare tab, along with setup steps you need to complete before running the flows. </p>
+								
+							
+						</div>
+						
+						<div class="row content-details">
+							<h4>Find out more</h4>
+							<ul>
+							
+								
+																
+								<li> <a href="javascript:;" onclick="openHelpSystem('/com.ibm.etools.mft.doc/bi12002_.htm')" title="Knowledge Center link to Developing integration solutions by using applications">Developing integration solutions by using applications</a> </li>
+							   	
+							
+								
+																
+								<li> <a href="javascript:;" onclick="openHelpSystem('/com.ibm.etools.mft.doc/cl23141_.htm')" title="Knowledge Center link to Callable message flows">Callable message flows</a> </li>
+							   	
+							
+							</ul>
+						</div>
+						
+					</div>
+					
+					<div class="small-2 medium-2 large-2 columns">
+					
+					
+					<h4 class="tkaction"><a href="javascript:;" onclick="importArtifacts(); openResource('EventRoutingFlow')"> Import <img class="icon-image" src="http://ot4i.github.io/iib-tutorials/images/icons/ibmdesign/back-right-previous_128-orange.png"></a></h4>
+										
+				    </div>
+					
+		    	</div>
+		    	<div class="content" id="panel31">
+					
+		    		<div class="small-10 medium-10 large-10 columns divider">
+					
+						<div class="row content-details">
+						  	<h4>Imported projects</h4>
+						    
+						    
+								<p> You will see the 4 Integration Applications in your workspace, and the <span class="msgflow">TimestampMyJSON</span> flow will be opened. </p>
+								
+							
+								<p> In message flow <span class="msgflow">TimestampMyJSON</span> there is a CallableFlowInvoke node with a label starting <span class="resource">Call Timestamp Flow, updates body</span>. This is configured with two names: the Target Application and the Target Endpoint Name. These are used to resolve which callable flow is used. </p>
+								
+							
+								<p> The mapping node <span class="resource">Apply any LE overrides</span> will set values under <span class="varname">LocalEnvironment/Destination/CallableFlow/Invoke/targetApplication</span> if they are present in the input JSON message. This allows a differently named Application to be used for the <span class="resource">CallableFlowInvoke</span> node, overriding the node option. </p>
+								
+							
+								<p> The <span class="msgflow">testCallableTimestamp</span> message flow in application <span class="application">TestCallableFlows</span> is simpler and just invokes both callable flows in sequence, without any overrides. The updates made by both flows build up in the JSON section of the message tree. </p>
+								
+							
+								<p> The two Applications providing callable flows are built into a BAR file <span class="resource">callable_flows.bar</span>. Before running either of these flows, you need to deploy the Applications which provide the callable flow service. Use the Deploy link to do this. Once that has been done, move on to the Run tab to exercise the flows and see them working. </p>
+								
+							
+						</div>
+						
+						<div class="row content-details">
+							<h4>Find out more</h4>
+							<ul>
+							
+								
+																
+								<li> <a href="javascript:;" onclick="openHelpSystem('/com.ibm.etools.mft.doc/bi12002_.htm')" title="Knowledge Center link to Developing integration solutions by using integration services">Developing integration solutions by using integration services</a> </li>
+							   	
+							
+							</ul>
+						</div>
+							
+					</div>
+					
+					<div class="small-2 medium-2 large-2 columns">
+					
+					
+					<h4 class="tkaction"><a href="javascript:;" onclick="deployArtifacts()"> Deploy <img class="icon-image" src="http://ot4i.github.io/iib-tutorials/images/icons/ibmdesign/back-right-previous_128-orange.png"></a></h4>						
+				    					
+				    </div>
+					
+		    	</div>
+		    	<div class="content" id="panel41">
+		    		
+		    		<div class="small-10 medium-10 large-10 columns divider">
+					
+				    	<div class="row content-details">
+					      	<h4>Follow these steps to complete the tutorial</h4>
+					        
+						    
+								<p> Use the <span class="resource">TimestampMyJSON.msgflow</span> to run this tutorial. The message flow should already be open in the editor, and you should have already deployed the <span class="resource">callable_flows.bar</span> to an integration server on your TESTNODE. </p>
+								
+								
+									
+									<ol>
+									
+									
+										<li> Open <span class="resource">TimestampMyJSON.msgflow</span>, and click the Flow Exerciser icon <img src="http://ot4i.github.io/ot4i.tutorials//dist/images/icons/iib/startFlowExerciser.png" alt> to enable unit testing on the flow. If you are prompted where to deploy, ensure you deploy to the same integration server as the <span class="application">CallableTimestamp</span> applications.
+										
+										</li>
+									
+										<li> Click the Send Message icon <img src="http://ot4i.github.io/ot4i.tutorials/dist/images/icons/iib/sendMessage.png" alt> to select a message to send to the flow.
+										
+										</li>
+									
+										<li> Choose the input message <span class="resource">JSON message, no overrides</span>, and click Send. Your request message is sent to the HTTP input node.
+										
+										</li>
+									
+										<li> When the list of actions is shown, click on the Received HTTP reply message... item to show the output from the flow. Note that a timestamp has been added into the output message.
+										
+										</li>
+									
+										<li> After you close the dialog, the path taken through the messageflow is highlighted. Click on the message icon on each connection to see how the tree is updated by each node.
+										
+										</li>
+									
+										<li> Once you have tried the first message, click Send Message <img src="http://ot4i.github.io/ot4i.tutorials/dist/images/icons/iib/sendMessage.png" alt> again and select the <span class="resource">JSON message, override target application</span> message. Note that it contains an additional tag <span class="userinput">overriddenApplicationName</span> with value <span class="userinput">CallableTimestampAlternate</span>.
+										
+										</li>
+									
+										<li> Send that through the flow and note the output contains <span class="userinput">Alternate timestamp</span>. If you look at the message tree before the CallableFlowInvoke node, note that a value is set in LocalEnvironment to override the targetApplication, which makes the flow under test invoke a different Callable Flow.
+										
+										</li>
+									
+									
+									</ol>
+									
+								
+							
+								<p> You can further experiment with this scenario by changing the <span class="application">CallableTimestamp</span> application and redeploying it, and then sending a message through the unchanged <span class="application">HTTPParentApplication</span>. Note that the behaviour changes immediately without needing to change or redeploy the invoking flow. </p>
+								
+							
+								<p> This tutorial shows the invoking and callable flow running in the same integration server, which requires no additional setup. You can also use these applications to experiment with running the invoking flow and the callable flow on different integration servers or different machines, but some additional configuration is required to enable cross-server communication. Look at the Knowledge Center links below for information on topologies in which these flows can run, and how to set them up. </p>
+								
+							
+						</div>
+						
+						<div class="row content-details"> 	
+							<h4>Find out more</h4>
+							<ul>
+							
+								
+																
+								<li> <a href="javascript:;" onclick="openHelpSystem('/com.ibm.etools.mft.doc/cl23143_.htm')" title="Knowledge Center link to Developing callable message flows">Developing callable message flows</a> </li>
+							   	
+							
+								
+																
+								<li> <a href="javascript:;" onclick="openHelpSystem('/com.ibm.etools.mft.doc/cl23148_.htm')" title="Knowledge Center link to Preparing the environment for callable flows">Preparing the environment for callable flows</a> </li>
+							   	
+							
+								
+																
+								<li> <a href="javascript:;" onclick="openHelpSystem('/com.ibm.etools.mft.doc/rt26110_.htm')" title="Knowledge Center link to Testing your message flow by using the Flow exerciser">Testing your message flow by using the Flow exerciser</a> </li>
+							   	
+							
+							</ul>
+						</div>
+							
+					</div>
+					
+					<div class="small-2 medium-2 large-2 columns">
+					
+					
+					
+					
+					
+					<h4 class="tkaction"><a href="javascript:;" onclick="cleanUp()" title="Clean up and remove any changes in your workspace made by the tutorial."> Clean Up <img class="icon-image" src="http://ot4i.github.io/iib-tutorials/images/icons/ibmdesign/close-cancel-error_128-red.png"></a></h4>
+				    
+					
+				    </div>
+					
+				</div>	
+			</div> <!-- tab-content -->
+		</div> <!-- columns -->
+	  </div> <!-- row --></body>
+		<script src="http://ot4i.github.io/iib-tutorials/js/vendor/jquery.js"></script>
+		<script src="http://ot4i.github.io/iib-tutorials/js/vendor/foundation.min.js"></script>
+		<script src="http://ot4i.github.io/iib-tutorials/js/main.js"></script>
+	</body>
+<!-- body::End -->
+
+</html>
