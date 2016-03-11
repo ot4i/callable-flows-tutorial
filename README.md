@@ -1,2 +1,4 @@
 # callable-flows-tutorial
-A tutorial showing how to use the Callable Flows nodes added to Integration Bus v10.
+IIB tutorial for Callable Flows (v10 FP4)
+
+This branch is to hold HTML files looked up directly from the Tutorial Manager, after they have been transformed from the JSON file in the master branch.
