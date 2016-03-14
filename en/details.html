@@ -52,7 +52,7 @@
   <hr>
   <div class="row">
     <div class="small-12 medium-12 large-12 columns">
-      <h5> Learn how to use the CallableFlowInvoke, CallableFlowInput and CallableFlowReply nodes to divide processing between message flows. </h5>
+      <h5> Learn how to use the CallableFlowInvoke, CallableInput and CallableReply nodes to divide processing between message flows. </h5>
     </div>
   </div>
   <div class="row content-details">
@@ -63,7 +63,7 @@
       <div class="row">
       
         
-        <p> This tutorial shows how different parts of an integration application can be split between different processes using Callable Flow nodes.  The example uses an Integration Application which provides a raw HTTP/JSON service, and two separate Integration Applications which provide differently formatted timestamps for use in other flows. </p>
+        <p> This tutorial shows how different parts of an application can be split between different processes using Callable Flow nodes.  The example uses an application which provides a raw HTTP/JSON service, and two separate applications which provide differently formatted timestamps for use in other flows. </p>
       
         <p> This example uses a Callable Flow to provide that timestamp service, so it can be invoked from one or more message flows, but is not exposed outside the Integration Bus environment. A Mapping node is used to include the result of invoking the callable flow in the JSON response from the main flow. </p>
       
@@ -121,7 +121,7 @@
             
               <li>CallableFlowInvoke node</li>
             
-              <li>CallableFlowInput and Reply nodes</li>
+              <li>CallableInput and CallableReply nodes</li>
             
               <li>Testing Callable Flows locally</li>
             
