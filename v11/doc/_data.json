@@ -74,7 +74,7 @@
             "summary": 
 			{
                 "overviewName": "OVERVIEW",
-                "_overviewComment": "A short description of what happens in this tutorial, and an optional short explanation of the IIB concepts used in this tutorial if necessary for context. What background knowledge must the user have for this to make sense?",
+                "_overviewComment": "A short description of what happens in this tutorial, and an optional short explanation of the ACE concepts used in this tutorial if necessary for context. What background knowledge must the user have for this to make sense?",
                 "sections": 
 				[
                     {
@@ -179,7 +179,7 @@
                             "section": "The mapping node <span class='resource'>Apply any LE overrides</span> will set the value of <span class='varname'>LocalEnvironment/Destination/CallableFlow/Invoke/targetApplication</span> if set in the input JSON message. This allows a differently named application to be called from the <span class='resource'>CallableFlowInvoke</span> node, overriding the node option."
                         },
 			{
-			    "section":"The two applications providing callable flows are built into a BAR file <span class='resource'>callable_flows.bar</span>. Deploy these now, using the link on the right of this page. Once you have done that, move on to the Run tab to exercise the flows and see them working."
+			    "section":"The two applications providing callable flows are built into a BAR file <span class='resource'>callable_flows.bar</span>. Deploy this BAR file now. The rest of this tutorial's instructions will assume the use of the default integration server owned by TESTNODE. Move on to the Run tab to exercise the flows and see them working."
                         }
                     ]
                 },
@@ -197,17 +197,6 @@
                             "title": "Knowledge Center link to ",
                             "description": "Developing callable message flows",
                             "link": "com.ibm.etools.mft.doc/cl23143_.htm"
-                        }
-                    ]
-                },
-                "actions": 
-				{
-                    "title": "Prepare Actions",
-                    "details": 
-					[
-                        {
-                            "name": "Deploy",
-                            "method": "deployArtifacts()"
                         }
                     ]
                 }
@@ -229,10 +218,10 @@
                                 "details": 
 								[
                                     {
-                                        "details": "Open <span class='resource'>TimestampMyJSON.msgflow</span>, and click the Flow Exerciser icon <img src='http://ot4i.github.io/ot4i.tutorials//dist/images/icons/iib/startFlowExerciser.png' alt='' /> to deploy and start testing the flow. If you are prompted where to deploy, ensure you deploy to the same integration server as the <span class='application'>CallableTimestamp</span> applications."
+                                        "details": "Open <span class='resource'>TimestampMyJSON.msgflow</span>, and click the Flow Exerciser icon <img src='https://ot4i.github.io/ot4i.tutorials//dist/images/icons/iib/startFlowExerciser.png' alt='' /> to deploy and start testing the flow. If you are prompted where to deploy, ensure you deploy to the same integration server as the <span class='application'>CallableTimestamp</span> applications."
                                     },
                                     {
-                                        "details": "Click the Send Message icon <img src='http://ot4i.github.io/ot4i.tutorials/dist/images/icons/iib/sendMessage.png' alt='' /> to select a message to send to the flow."
+                                        "details": "Click the Send Message icon <img src='https://ot4i.github.io/ot4i.tutorials/dist/images/icons/iib/sendMessage.png' alt='' /> to select a message to send to the flow."
                                     },
                                     {
                                         "details": "Choose the input message <span class='resource'>JSON message, no overrides</span>, and click Send. Your request message is sent to the HTTP input node."
@@ -244,7 +233,7 @@
                                         "details": "After you close the dialog, the path taken through the messageflow is highlighted. Click on the message icon on each connection to see how the tree is updated by each node."
 				    },
 				    {
-                                        "details": "Once you have tried the first message, click Send Message <img src='http://ot4i.github.io/ot4i.tutorials/dist/images/icons/iib/sendMessage.png' alt='' /> again and select the <span class='resource'>JSON message, override target application</span> message. Note that it contains an additional tag <span class='userinput'>overriddenApplicationName</span> with value <span class='userinput'>CallableTimestampAlternate</span>."
+                                        "details": "Once you have tried the first message, click Send Message <img src='https://ot4i.github.io/ot4i.tutorials/dist/images/icons/iib/sendMessage.png' alt='' /> again and select the <span class='resource'>JSON message, override target application</span> message. Note that it contains an additional tag <span class='userinput'>overriddenApplicationName</span> with value <span class='userinput'>CallableTimestampAlternate</span>."
 					},
 				    {
 					"details": "Send that through the flow and note the output contains <span class='userinput'>Alternate timestamp</span>. If you look at the message tree before the CallableFlowInvoke node, note that a value is set in LocalEnvironment to override the targetApplication, which makes the flow under test invoke a different Callable Flow."
@@ -281,19 +270,7 @@
                             "link": "com.ibm.etools.mft.doc/rt26110_.htm"
                         }
                     ]
-                },
-				"exits": 
-				{
-					"title": "Run Exits",
-					"details": 
-					[
-						{
-							"name": "Clean Up",
-							"description": "Clean up and remove any changes in your workspace made by the tutorial.",
-							"method": "cleanUp()"
-						}
-					]
-				}
+                }
             }
         }
     }
