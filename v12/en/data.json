@@ -32,7 +32,7 @@
 	{
         "_common": 
 		{
-            "name": "Callable Flows",
+            "name": "Using Callable Flows to split synchronous flow processing",
             "shortDescription": "Learn how to use the CallableFlowInvoke, CallableInput and CallableReply nodes to divide processing between message flows.",
             "durationText": "This tutorial takes approximately",
             "durationTime": "15 minutes",
